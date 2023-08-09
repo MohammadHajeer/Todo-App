@@ -1,0 +1,52 @@
+:root {
+  --bright-color: #3a7bfd;
+  --bg-color: hsl(0, 0%, 98%);
+  --task-color: hsl(0, 0%, 98%);
+  --border-color: hsl(236, 33%, 92%);
+  --main-text-color: hsl(235, 19%, 35%);
+  --secondary-text-color: hsl(236, 9%, 61%);
+}
+html.dark {
+  --bg-color: #161722;
+  --task-color: hsl(235, 24%, 19%);
+  --border-color: hsl(237, 14%, 26%);
+  --main-text-color: hsl(236, 33%, 92%);
+  --secondary-text-color: hsl(234, 11%, 52%);
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bright-color);
+}
+
+body {
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* color: #57ddff; */
+  /* color: #c058f3; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.active {
+  @apply bg-gradient-to-r from-[#57ddff] to-[#c058f3]
+  flex justify-center items-center w-5 h-5 rounded-full cursor-auto;
+}
+
+.dragged {
+  @apply bg-[--border-color];
+}
