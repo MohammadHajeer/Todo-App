@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import checkIcon from "../images/icon-check.svg";
+import { motion } from "framer-motion";
 
 function TaskHeader({ dispatch }) {
   const [active, setActive] = useState(false);
@@ -22,7 +23,12 @@ function TaskHeader({ dispatch }) {
   }
 
   return (
-    <div className="flex items-center gap-5 p-5 bg-[--task-color] my-8 rounded-md">
+    <motion.div
+      initial={{ y: 200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 1 }}
+      className="flex items-center gap-5 p-5 bg-[--task-color] my-8 rounded-md"
+    >
       <span
         onClick={handleActiveClick}
         className={
@@ -41,7 +47,7 @@ function TaskHeader({ dispatch }) {
         placeholder="create a new todo..."
         className="flex-1 text-lg outline-none bg-transparent text-[--bright-color]"
       />
-    </div>
+    </motion.div>
   );
 }
 
